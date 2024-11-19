@@ -6,6 +6,7 @@
 $headingFont: Inter, sans-serif;
 $bodyFont: Hepta Slab, serif;
 $mobileScreens:900px;
+$normalSize: 1.2em;
 
 :root {
   --background: #ffffff;
@@ -49,7 +50,7 @@ nav {
   & button {
     display: block;
     margin: 1em 0;
-    font-size: 1.2em;
+    font-size: $normalSize;
     font-weight: 600;
   }
 
@@ -60,17 +61,17 @@ nav {
 
 .info{
   display: grid;
-  grid-template-rows: 2fr 1fr;
+  grid-template-rows: 3fr 1fr;
   align-items: end;
   border-radius: 2em;
   padding: 0 4em;
 
   & .content {
-    font-size: 1em;
     margin: 1em 0;
 
     & p {
       line-height: 1.8em;
+      font-size: $normalSize;
       text-align: justify;
     }
 
