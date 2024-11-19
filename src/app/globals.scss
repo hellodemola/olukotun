@@ -1,0 +1,180 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Hepta+Slab:wght@1..900&family=Inter:opsz,wght@14..32,100..900&display=swap');
+$headingFont: Inter, sans-serif;
+$bodyFont: Hepta Slab, serif;
+$mobileScreens:600px;
+$tableScreens:900px;
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+
+
+html, body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; /* Ensures consistent sizing model */
+  height: 100%; /* Useful for setting elements to 100% height */
+  font-family: $bodyFont;
+  font-optical-sizing: auto;
+}
+
+main {
+  width: 100vw;
+  height: 100vh;
+  padding: 2em;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+
+  @media only screen and (max-width: $mobileScreens) {
+     display: block;
+     width: initial;
+     padding: 1em;
+  }
+}
+
+nav {
+  & button {
+    display: block;
+    margin: 1em 0;
+    font-size: 1.2em;
+    font-weight: 600;
+  }
+}
+
+.info{
+  display: grid;
+  grid-template-rows: 2fr 1fr;
+  align-items: end;
+  border-radius: 2em;
+  padding: 0 4em;
+
+  & .content {
+    font-size: 1em;
+    margin: 1em 0;
+
+    & p {
+      line-height: 1.8em;
+      text-align: justify;
+    }
+
+  }
+
+  & img {
+    display: none;
+  }
+
+
+  @media only screen and (max-width: $mobileScreens) {
+    display: block;
+    width: initial;
+    padding: 0.1em;
+    text-align: center;
+    font-size: 1em;
+
+    & img {
+      display: block;
+    }
+
+    & p {
+      text-align: left;
+    }
+ }
+}
+
+.showCase{
+  overflow: scroll;
+  padding: 0 2em;
+
+  & .title {
+    text-decoration: underline;
+  }
+
+  @media only screen and (max-width: $mobileScreens) {
+    padding: 0 2em;
+  }
+}
+
+.pod{
+  padding: 1.5em 3em;
+  background: whitesmoke;
+  margin: 1em 0;
+  transition: transform 0.3s ease;
+  
+  &:hover{
+    background-color: gray;
+    color: white;
+    cursor: pointer;
+    transform: scale(1.2);
+  }
+
+  & h3 {
+    font-family: $headingFont;
+  }
+
+
+  & .content {
+    margin: 1em 0;
+  }
+
+}
+
+.cert{
+  display: grid;
+  gap: 2em;
+  margin: 2em 0;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.brands{
+  display: grid;
+  gap: 2em;
+  margin: 4em 0;
+  place-content: center;
+  place-items: center;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+/**
+TYPOGRAPHY
+**/
+
+h1{
+  font-family: $headingFont;
+  font-size: 3.375em;
+  line-height: 1em;
+  font-weight: 900;
+  font-optical-sizing: auto;
+}
+
+h2{
+  font-family: $headingFont;
+  font-size: 2.25em;
+  font-size: 100;
+  line-height: 1em;
+  font-optical-sizing: auto;
+}
+
+h3 {
+  font-size: 1.5em;
+  font-family: $bodyFont;
+  font-weight: 700;
+}
+
+h4 {
+  font-size: 1.5em;
+  font-family: $bodyFont;
+}
+

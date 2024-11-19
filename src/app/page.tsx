@@ -1,42 +1,42 @@
 'use client'
-import useMeatCal from "./hooks/useMeatCal";
-import ConvertNumber from "./utils/convertNumber.class";
+
+import Landing from "./components/landing";
+import Project from "./components/project";
+import { brands } from "./records/brands";
+import { certs } from "./records/certs";
+import { projects } from "./records/projects";
+
 
 export default function Home() {
-  const {metrics, handleRange} = useMeatCal();
-  const { amount, max, range, totalAmount } = metrics
-  const number = new ConvertNumber(amount);
-  const date = new Date();
-  const handleBuy = () => {
-    alert(amount)
-    // paystack
-  }
-  
-  return (
-    <div className="grid grid-row-[repeat(1fr)] place-items-center place-content-center my-4">
-    <div className="">
-     <h1>Today Meat</h1>
-     <i>Total Metrics ({totalAmount})</i>
-     <p>{date.toLocaleDateString()}</p>
-     <p> {max} Slots to go</p>
-      
-      <input onChange={(e) => handleRange(e.target.value)} type="range" min="1" max={max} defaultValue={1} className="slider" />
-      <p>
-      {range} Portion 
-      </p>
-      <p>
-       N {number.convertToCurrency}
-      </p>
 
-      <h1>Share contains</h1>
-      <p>
-        1 Kg of Meat
-      </p>
-      <p>
-        A PCS of all part of the cow
-      </p>
-    </div>
-    <button onClick={handleBuy} className="p-2 bg-[green] text-white">Grab a slice</button>
-    </div>
+  return (
+    <main>
+     <Landing />
+      <div className="showCase">
+        <h3 className="title">Projects</h3>
+        {projects.map((e, index) => (
+          <Project key={index} e={e} />
+        ))}
+
+        <h3 className="title">Ceritifications</h3>
+        <div id="cert" className="cert">
+        {certs.map((e, index) => (
+        <img className="w-full" src={e?.media || `https://static.scrum.org/web/badges/badge-09173b39-cedf-4321-88b6-ce0acdfb5a70.svg`} key={index} alt="" />
+        ))}
+        </div>
+
+        <h3 className="title">Brands</h3>
+
+        <div id="brands" className="brands">
+        {brands.map((e, index) => (
+        <img className="w-full" src={e.media} key={index} alt="" />
+        ))}
+        </div>
+
+        <div>
+        <img className="w-full" src="/headshot.jpg" alt="" />
+        </div>
+      </div>
+    </main>
   );
 }
