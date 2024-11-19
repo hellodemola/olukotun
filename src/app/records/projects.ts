@@ -4,6 +4,8 @@ export interface IProject  {
     application: string,
     content: string [],
     link: string,
+    assets?: string [],
+    isWeb?: boolean,
 }
 
 
@@ -14,7 +16,13 @@ export const projects: IProject [] = [
       content: [
         'This is the largest and most important Fedex Logistics application which files $42.1 billion- $43 billion worth of shipments to CBP annually.'
       ],
-      link: 'gemini'
+      link: '/project',
+      isWeb: true,
+      assets: [
+        '/projects/one.png',
+        '/projects/two.png',
+        '/projects/three.png',
+      ]
     },
     {
       company: 'Zhill systems',

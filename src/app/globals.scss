@@ -6,16 +6,26 @@
 $headingFont: Inter, sans-serif;
 $bodyFont: Hepta Slab, serif;
 $mobileScreens:900px;
-$normalSize: 1.2em;
+$normalSize: 1em;
+$headingSize: 3.157em;
+$subHeadingSize: 2.369em;
+$minSub: 1.777em;
+$bigNormalSize: 1.333em;
+$smalls:0.75em;
+$white: #F2F7FF;
+$primary: #0B409C;
+$secondary: #10316B;
+$yellow: #FFCE63;
+$whiteSmoke: whitesmoke;
 
 :root {
-  --background: #ffffff;
+  --background: #F2F7FF;
   --foreground: #171717;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
+    --background: #10316B;
     --foreground: #ededed;
   }
 }
@@ -104,7 +114,12 @@ nav {
   padding: 0 2em;
 
   & .title {
-    text-decoration: underline;
+    border-bottom: 1px solid #0a0a0a;
+    margin-top: 4em;
+    text-transform: uppercase;
+     &:first-child{
+      margin-top: 0;
+     }
   }
 
   @media only screen and (max-width: $mobileScreens) {
@@ -117,16 +132,25 @@ nav {
   background: whitesmoke;
   margin: 1em 0;
   transition: transform 0.3s ease;
+
+  @media only screen and (max-width: $mobileScreens) {
+    background-color: $primary;
+    color: white;
+
+    & button {
+      color: $yellow;
+    }
+  }
   
   &:hover{
-    background-color: gray;
+    background-color: $primary;
     color: white;
     cursor: pointer;
     transform: scale(1.2);
-  }
 
-  & h3 {
-    font-family: $headingFont;
+    & button {
+      color: $yellow;
+    }
   }
 
 
@@ -158,28 +182,42 @@ TYPOGRAPHY
 
 h1{
   font-family: $headingFont;
-  font-size: 3.375em;
+  font-size: $headingSize;
   line-height: 1em;
   font-weight: 900;
   font-optical-sizing: auto;
+  color: $primary;
 }
 
 h2{
   font-family: $headingFont;
-  font-size: 2.25em;
+  font-size: $subHeadingSize;
   font-size: 100;
   line-height: 1em;
+  color: #171717;
   font-optical-sizing: auto;
 }
 
 h3 {
-  font-size: 1.5em;
+  font-size: $minSub;
   font-family: $bodyFont;
   font-weight: 700;
 }
 
 h4 {
-  font-size: 1.5em;
+  font-size: $bigNormalSize;
+  font-family: $headingFont;
+  font-weight: 700;
+}
+
+h5 {
+  font-size: $bigNormalSize;
   font-family: $bodyFont;
+}
+
+h6 {
+  font-size: $smalls;
+  font-family: $bodyFont;
+  font-weight: 600;
 }
 
