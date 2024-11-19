@@ -5,8 +5,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Hepta+Slab:wght@1..900&family=Inter:opsz,wght@14..32,100..900&display=swap');
 $headingFont: Inter, sans-serif;
 $bodyFont: Hepta Slab, serif;
-$mobileScreens:600px;
-$tableScreens:900px;
+$mobileScreens:900px;
 
 :root {
   --background: #ffffff;
@@ -29,6 +28,7 @@ html, body {
   height: 100%; /* Useful for setting elements to 100% height */
   font-family: $bodyFont;
   font-optical-sizing: auto;
+  scroll-behavior: smooth;
 }
 
 main {
@@ -52,6 +52,10 @@ nav {
     font-size: 1.2em;
     font-weight: 600;
   }
+
+  @media only screen and (max-width: $mobileScreens) {
+    display: none;
+ }
 }
 
 .info{
@@ -103,7 +107,7 @@ nav {
   }
 
   @media only screen and (max-width: $mobileScreens) {
-    padding: 0 2em;
+    padding: 0 0.3em;
   }
 }
 

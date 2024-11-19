@@ -15,9 +15,15 @@ export default function Landing () {
         </div>
   
         <nav>
+          <a href="#project">
           <button>01 Projects</button>
+          </a>
+          <a href="#cert">
           <button>02 Certifications</button>
+          </a>
+          <a href="#brands">
           <button>03 Brands</button>
+          </a>
         </nav>
         </div>
   
