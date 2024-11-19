@@ -29,7 +29,7 @@ export default function Landing () {
   
   
         <div className="my-4">
-          <a href="mailto:demolaspace1@gmail.com">Contact Ademola</a>
+          <a href="mailto:demolaspace1@gmail.com">Contact Ade</a>
         </div>
         </div>
     )
