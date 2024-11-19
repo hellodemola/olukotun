@@ -11,7 +11,7 @@ export default function Project () {
             &#x21f1;
               Back
             </Link>
-           <div className="pod">
+           <div id="projects" className="pod">
            <h6>{projects[0].company}</h6>
            <h4 className="">{projects[0].application}</h4>
            
