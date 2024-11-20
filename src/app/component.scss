@@ -1,0 +1,104 @@
+@use './variables.scss' as *;
+@use './mix.scss';
+
+.info{
+    display: grid;
+    grid-template-rows: 3fr 1fr;
+    align-items: end;
+    border-radius: 2em;
+    padding: 0 4em;
+  
+    img {
+      display: none;
+    }
+
+    @include mix.respond-to($mobileScreens){
+      display: block;
+      width: initial;
+      padding: 0.1em;
+      text-align: center;
+      font-size: 1em;
+  
+      img {
+        display: block;
+      }
+   }
+  }
+
+.content {
+  margin: 1em 0;
+
+  p {
+  line-height: 1.8em;
+  font-size: $normalSize;
+  text-align: justify;
+  }
+
+}
+
+.showCase{
+  overflow: scroll;
+  padding: 0 2em;
+
+  @include mix.respond-to($mobileScreens){
+    padding: 0 0.3em;
+  }
+
+}
+
+.title {
+  border-bottom: 1px solid #0a0a0a;
+  margin-top: 4em;
+  text-transform: uppercase;
+
+  &:first-child{
+  margin-top: 0;
+  }
+  
+}
+  
+  .pod{
+    padding: 1.5em 3em;
+    background: $whiteSmoke;
+    margin: 1em 0;
+    transition: transform 0.3s ease;
+  
+    @include mix.respond-to($mobileScreens){
+      background-color: $primary;
+      color: $white;
+      padding: 1.5em;
+
+      button {
+        color: $yellow;
+      }
+
+    }
+    
+    &:hover{
+      background-color: $primary;
+      color: $white;
+      cursor: pointer;
+      transform: scale(1.2);
+
+      button {
+        color: $yellow;
+      }
+
+    }  
+  }
+  
+  .cert{
+    display: grid;
+    gap: 2em;
+    margin: 2em 0;
+    grid-template-columns: repeat(4, 1fr);
+  }
+  
+  .brands{
+    display: grid;
+    gap: 2em;
+    margin: 4em 0;
+    place-content: center;
+    place-items: center;
+    grid-template-columns: repeat(3, 1fr);
+  }

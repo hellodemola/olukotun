@@ -1,0 +1,47 @@
+@use './variables.scss' as *;
+@use './root.scss' as *;
+@use './mix.scss';
+
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Ensures consistent sizing model */
+    height: 100%; /* Useful for setting elements to 100% height */
+    background-color: var(--background);
+    color: var(--foreground);
+    font-family: var(--font-body);
+    font-optical-sizing: auto;
+    scroll-behavior: smooth;
+  }
+  
+  main {
+    width: 100vw;
+    height: 100vh;
+    padding: 2em;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  
+    @include mix.respond-to($mobileScreens){
+       display: block;
+       width: initial;
+       padding: 1em;
+    }
+  }
+  
+  nav {
+
+    button{
+      display: block;
+      margin: 1em 0;
+      font-size: $normalSize;
+      font-weight: 600;
+    }
+
+    @include mix.respond-to($mobileScreens){
+      display: none;
+   }
+
+  }
+  
+  
+

@@ -1,0 +1,18 @@
+@use './variables.scss' as *;
+
+:root {
+    --background: $white;
+    --foreground: $dark;
+    --primary: $primary;
+    --secondary: $secondary;
+    --yellow: $yellow;
+    --font-heading: #{$headingFont};
+    --font-body: #{$bodyFont};
+  }
+  
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --background: $dark;
+      --foreground: $secondary;
+    }
+  }

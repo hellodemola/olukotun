@@ -1,0 +1,25 @@
+@use './variables.scss' as *;
+
+$headings: (
+  h1: (size: $headingSize, weight: 900, color: $primary, font: $headingFont, height: 1em ),
+  h2: (size: $subHeadingSize, weight: 400, color: $dark, font: $headingFont, height: 1em),
+  h3: (size: $minSub, weight: 700, color: $primary, font: $bodyFont),
+  h4: (size: $bigNormalSize, weight: 700, font: $headingFont),
+  h5: (size: $bigNormalSize, weight: 400, color: $dark, font: $bodyFont),
+  h6: (size: $smalls, weight: 600, font: $bodyFont),
+);
+
+@mixin heading-style($level) {
+  font-family: map-get(map-get($headings, $level), font);
+  font-size: map-get(map-get($headings, $level), size);
+  font-weight: map-get(map-get($headings, $level), weight);
+  color: map-get(map-get($headings, $level), color);
+  line-height: map-get(map-get($headings, $level), height);
+}
+
+
+@mixin respond-to($breakpoint) {
+    @media only screen and (max-width: $breakpoint) {
+      @content;
+    }
+  }
