@@ -2,6 +2,10 @@
 
 This is a frontend minimalitic website for a project manager. Design is heavily inspired by [Sarah Dayah](https://www.sarahdayan.dev/) personal website. 
 
+## URL
+
+[Ademola Olukotun](https://olukotun.vercel.app) Personal portfolio website.
+
 ## Getting Started
 
 First, run the development server:
