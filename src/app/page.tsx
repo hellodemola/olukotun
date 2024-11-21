@@ -12,7 +12,7 @@ export default function Home() {
   return (
     <main>
      <Landing />
-      <div className="showCase">
+      <div className="showCase slideUp">
         <h5 className="title">Projects</h5>
         {projects.map((e, index) => (
           <Project key={index} e={e} />

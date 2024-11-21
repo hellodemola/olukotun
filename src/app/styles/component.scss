@@ -11,7 +11,7 @@
     img {
       display: none;
     }
-
+    
     @include mix.respond-to($mobileScreens){
       display: block;
       width: initial;
